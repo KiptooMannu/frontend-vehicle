@@ -9,8 +9,6 @@ import deliveryIcon from '../../assets/images/shipped.png'; // Replace with actu
 import luxuryIcon from '../../assets/images/car-service.png'; // Replace with actual icon path
 import ecoIcon from '../../assets/images/car image.webp'; // Replace with actual icon path
 import airportIcon from '../../assets/images/airplane.png'; // Replace with actual icon path
-import chauffeurIcon from '../../assets/images/car image.webp'; // Replace with actual icon path
-import roadsideIcon from '../../assets/images/location (1).png'; // Replace with actual icon path
 
 
 
@@ -69,16 +67,7 @@ const OurServices = () => {
           <h3>Airport Pickup</h3>
           <p>Enjoy the convenience of our airport pickup service, available at major airports.</p>
         </div>
-        <div className="service">
-          <img src={chauffeurIcon} alt="Chauffeur Service" />
-          <h3>Chauffeur Service</h3>
-          <p>Relax and enjoy the ride with our professional chauffeur service.</p>
-        </div>
-        <div className="service">
-          <img src={roadsideIcon} alt="Roadside Assistance" />
-          <h3>Roadside Assistance</h3>
-          <p>Get peace of mind with our comprehensive roadside assistance available 24/7.</p>
-        </div>
+ 
       </div>
     </section>
   );

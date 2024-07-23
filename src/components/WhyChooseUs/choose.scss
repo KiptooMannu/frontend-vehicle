@@ -1,8 +1,11 @@
 .why-choose {
-  padding: 4rem 0rem;
+  padding: 2rem 1rem;
   background-color: #fff;
   text-align: center;
   margin-top: 10px;
+  box-sizing: border-box;
+  max-width: 100%; // Constrain width for better appearance on larger screens
+  margin: 0 auto; // Center the container
 
   h2 {
     font-size: 2.5rem;
@@ -12,13 +15,13 @@
 
   .features {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    flex-wrap: wrap; // Allow items to wrap to the next line
+    gap: 1rem; // Space between items
 
     .feature {
-      max-width: 20%;
+      flex: 1 1 calc(25% - 1rem); // Four items per row, with gap adjustment
+      box-sizing: border-box; // Ensure padding and border are included in width calculations
       text-align: center;
-      margin-bottom: 2rem;
       padding: 1rem;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -47,12 +50,26 @@
     }
   }
 
+  @media (max-width: 1024px) {
+    .features {
+      .feature {
+        flex: 1 1 calc(33.333% - 1rem); // Three items per row for tablets
+      }
+    }
+  }
+
   @media (max-width: 768px) {
     .features {
-      flex-direction: column;
-
       .feature {
-        max-width: 100%;
+        flex: 1 1 calc(50% - 1rem); // Two items per row for mobile devices
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .features {
+      .feature {
+        flex: 1 1 calc(100% - 1rem); // One item per row for very small screens
       }
     }
   }

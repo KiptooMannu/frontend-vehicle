@@ -4,7 +4,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
-
+import Cars from './components/Cars/cars'
 // Components
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
@@ -44,6 +44,7 @@ const App = () => {
             <>
               <HeroSection />
               <About />
+              <Cars/>
               <WhyChoose />
               <ServicesSection />
               <ContactSection />
