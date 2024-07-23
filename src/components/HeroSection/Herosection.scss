@@ -1,3 +1,5 @@
+
+
 @keyframes changeBackground {
   0% {
     background-image: url('../../assets/images/couple-near-new-white-car-man-driving-work-his-wife-will-waiting-him.jpg');
@@ -20,14 +22,11 @@
   background-repeat: no-repeat;
   color: white;
   text-align: center;
-  height: 70vh; // Adjust height as needed
-  box-sizing: border-box;
+  padding: 4rem 2rem;
+  height: 70vh;
   align-items: center;
   justify-content: center;
   animation: changeBackground 15s infinite linear;
-  padding: 2rem 1rem;
-  display: flex; // Ensure centering of content
-  flex-direction: column; // Stack content vertically
 
   &::before {
     content: "";
@@ -43,18 +42,18 @@
   .words {
     position: relative;
     z-index: 2;
-    margin-top: 0; // Reset margin-top for better alignment
+    margin-top: 100px;
 
     h1 {
-      font-size: 4rem; // Adjust font size for readability
+      font-size: 3rem;
       margin-bottom: 1rem;
     }
 
     p {
-      font-size: 2.3rem;
+      font-size: 1.9rem;
       font-weight: bold;
       margin-bottom: 2rem;
-      animation: flashRed 1s infinite; // Ensure flashRed animation is defined
+      animation: flashRed 1s infinite;
     }
 
     button {
@@ -75,10 +74,10 @@
 
   @media (max-width: 1024px) {
     padding: 3rem 1.5rem;
-    height: 50vh; // Adjusted height for better appearance on tablets
+    height: 40vh;
 
     .words {
-      margin-top: 0; // Adjusted margin for better alignment
+      margin-top: 70px;
 
       h1 {
         font-size: 2.5rem;
@@ -96,10 +95,10 @@
 
   @media (max-width: 768px) {
     padding: 2rem 1rem;
-    height: 40vh; // Adjusted height for mobile devices
+    height: 30vh;
 
     .words {
-      margin-top: 0; // Adjusted margin for better alignment
+      margin-top: 50px;
 
       h1 {
         font-size: 2rem;
@@ -111,24 +110,6 @@
 
       button {
         font-size: 1rem;
-      }
-    }
-  }
-
-  @media (max-width: 480px) {
-    height: 30vh; // Further adjustment for very small screens
-
-    .words {
-      h1 {
-        font-size: 1.8rem; // Further adjust font size for very small screens
-      }
-
-      p {
-        font-size: 1rem; // Further adjust font size for very small screens
-      }
-
-      button {
-        font-size: 0.9rem; // Further adjust font size for very small screens
       }
     }
   }

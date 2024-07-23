@@ -28,13 +28,13 @@
     }
 
     .about-text {
-      flex: 3; /* Adjust flex value as needed */
+      flex: 2; /* Adjust flex value as needed */
       text-align: left;
       margin: 0 1rem;
       max-width: 50%; /* Adjust max-width if needed */
 
       h2 {
-        font-size: 3rem;
+        font-size: 2rem;
         margin-bottom: 1rem;
         color: #333;
       }
@@ -46,7 +46,7 @@
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 1rem;
         margin-bottom: 2rem;
         color: #555;
         line-height: 1.6;

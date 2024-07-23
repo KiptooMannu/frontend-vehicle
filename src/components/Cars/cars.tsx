@@ -7,7 +7,6 @@ import car3 from '../../assets/images/images/tesla.jpg';
 import car4 from '../../assets/images/car image.webp';
 import car5 from '../../assets/images/The BMW M850i at SIXT.jpeg';
 import car6 from '../../assets/images/images/The BMW M850i at SIXT.jpeg';
-import car7 from '../../assets/images/images/Car Rentals _ Mack Car Rentals _ Eleuthera, Bahamas.jpeg';
 import car8 from '../../assets/images/Car Rentals _ Mack Car Rentals _ Eleuthera, Bahamas.jpeg';
 
 const cars = [
@@ -17,12 +16,10 @@ const cars = [
   { imageSrc: car4, name: 'Audi Q7', specs: 'SUV' },
   { imageSrc: car5, name: 'Honda Accord', specs: 'Midsize Sedan' },
   { imageSrc: car6, name: 'Tesla Model S', specs: 'Electric Sedan' },
-  { imageSrc: car7, name: 'Porsche 911', specs: 'Sports Car' },
+  { imageSrc: car4, name: 'Porsche 911', specs: 'Sports Car' },
   { imageSrc: car8, name: 'Mercedes-Benz S-Class', specs: 'Luxury Sedan' },
-  { imageSrc: car4, name: 'Audi Q7', specs: 'SUV' },
-  { imageSrc: car5, name: 'Honda Accord', specs: 'Midsize Sedan' },
-  { imageSrc: car6, name: 'Tesla Model S', specs: 'Electric Sedan' },
-  { imageSrc: car7, name: 'Porsche 911', specs: 'Sports Car' },
+  { imageSrc: car2, name: 'Audi Q7', specs: 'SUV' },
+
 
 ];
 
