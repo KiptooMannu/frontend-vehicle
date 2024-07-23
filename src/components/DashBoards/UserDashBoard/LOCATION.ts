@@ -3,7 +3,7 @@ import {Location} from './Slices/types'
 
 export const locationApi = createApi({
     reducerPath: 'locationApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/api' }),
+    baseQuery: fetchBaseQuery({ baseUrl: 'https://vehicle-management-backend.onrender.com/api' }),
     tagTypes: ['Location'],
     endpoints: (builder) => ({
       getLocations: builder.query<Location[], void>({

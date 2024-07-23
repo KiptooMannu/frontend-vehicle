@@ -11,7 +11,6 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 
 // Import the new DashboardSummary component
 import DashboardSummary from './Slices/Dashboard';
-
 import ManageVehicles from './managevehicle';
 import ManageUsers from './manageuser';
 import Reports from './reports';

@@ -16,7 +16,7 @@ const CheckoutButton: React.FC<CheckoutButtonProps> = ({ booking, onSuccess, onE
     if (!stripe || !elements) return;
 
     try {
-      const response = await fetch('http://localhost:8000/api/checkout-session', {
+      const response = await fetch('https://vehicle-management-backend.onrender.com/api/checkout-session', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import { CustomerSupportTicket } from '../Slices/types';
 
-const BASE_URL = 'http://localhost:8000';
+const BASE_URL = 'https://vehicle-management-backend.onrender.com';
 
 export const ticketsApi = createApi({
   reducerPath: 'ticketsApi',
