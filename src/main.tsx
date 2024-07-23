@@ -1,30 +1,34 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { ChakraProvider, extendTheme } from '@chakra-ui/react';
-import { store } from './store.ts';
-import App from './App.tsx';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { store } from './store.ts'; // Ensure your Redux store is correctly imported
+import App from './App.tsx'; // Adjust path based on your application structure
 
-// Create a custom theme
-const theme = extendTheme({
-  colors: {
-    primary: '#1976d2',
-    secondary: '#dc004e',
+// Create a custom theme using createTheme
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2', // Adjust primary color as per your design
+    },
+    secondary: {
+      main: '#dc004e', // Adjust secondary color as per your design
+    },
+    // Add more customizations as needed
   },
-  fonts: {
-    body: 'Roboto, sans-serif',
+  typography: {
+    fontFamily: 'Roboto, sans-serif', // Adjust default font family
+    // Add more typography configurations as needed
   },
 });
 
-const container = document.getElementById('root');
-const root = createRoot(container!); // createRoot(container!) if you use TypeScript
-
-root.render(
+// Render your application with ThemeProvider and Redux Provider
+createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <Provider store={store}>
-      <ChakraProvider theme={theme}>
+      <ThemeProvider theme={theme}>
         <App />
-      </ChakraProvider>
+      </ThemeProvider>
     </Provider>
   </React.StrictMode>
 );
