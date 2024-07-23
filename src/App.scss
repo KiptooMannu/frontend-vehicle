@@ -1,0 +1,144 @@
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-color: #f8f9fa;
+$text-color: #333;
+$font-family: 'Arial', sans-serif;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+// Global Styles
+body {
+  margin: 0;
+  font-family: $font-family;
+  background-color: $background-color;
+  color: $text-color;
+
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+p {
+  margin: 0;
+  padding: 0.5rem 0;
+}
+
+button {
+  background-color: $primary-color;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+  box-shadow: $box-shadow;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-shadow: $box-shadow;
+}
+
+// // Navbar Styles
+// .navbar {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   background-color: $primary-color;
+//   padding: 1rem;
+//   box-shadow: $box-shadow;
+
+//   a {
+//     color: white;
+//     padding: 0.5rem 1rem;
+//     &:hover {
+//       background-color: darken($primary-color, 10%);
+//     }
+//   }
+// }
+
+// Section Styles
+.section {
+  background-color: white;
+  padding: 2rem;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+}
+
+// Media Queries
+@media (max-width: 1200px) {
+  body {
+    max-width: 95%;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+
+    a {
+      padding: 0.5rem 0;
+    }
+  }
+
+  .container {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    max-width: 100%;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
+  }
+}

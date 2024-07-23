@@ -1,0 +1,121 @@
+.about {
+  // padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  margin-top: 10px;
+
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    
+    background-color: #fff;
+  height: 50vh;
+
+    .about-image {
+      max-width: 40%;
+      height:40vh;
+      border-radius: 8px;
+      border: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 15px;
+      margin-left: 5px;
+    }
+
+    .about-text {
+      max-width: 55%;
+      text-align: left;
+      margin-left: 2rem;
+    
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+      }
+
+      h3 {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        color: #666;
+      }
+
+      p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: #555;
+        line-height: 2rem;
+      }
+
+      .signature {
+        font-style: italic;
+        font-weight: bold;
+        color: #333;
+      }
+
+      .signature-image {
+        max-width: 100px;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+
+  .about-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+
+    .stat-item {
+      text-align: center;
+      flex: 1;
+      margin: 0 1rem;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      h4 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #555;
+     
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+
+      .about-image {
+        max-width: 80%;
+        margin-bottom: 1rem;
+      }
+
+      .about-text {
+        max-width: 100%;
+        margin-left: 0;
+
+        h2, h3, p {
+          text-align: center;
+        }
+      }
+    }
+
+    .about-stats {
+      flex-direction: column;
+
+      .stat-item {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
