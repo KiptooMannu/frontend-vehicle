@@ -5,9 +5,7 @@ import DashboardIcon from '@mui/icons-material/Dashboard';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import ListAltIcon from '@mui/icons-material/ListAlt';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
-import AssignmentIcon from '@mui/icons-material/Assignment';
 import AccountCircle from '@mui/icons-material/AccountCircle';
-import MyTickets from './Mytickets';
 import NewTicket from './NewTicket';
 import BookingHistory from './BookingHistory';
 import BookVehicle from './BookTheVehicles';
@@ -119,10 +117,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
               <ListItemIcon><ListAltIcon /></ListItemIcon>
               <ListItemText primary="Booking History" />
             </ListItem>
-            <ListItem button onClick={() => handleNavigation(<MyTickets />)}>
-              <ListItemIcon><AssignmentIcon /></ListItemIcon>
-              <ListItemText primary="My Tickets" />
-            </ListItem>
+      
             <ListItem button onClick={() => handleNavigation(<NewTicket />)}>
               <ListItemIcon><AddCircleIcon /></ListItemIcon>
               <ListItemText primary="New Ticket" />

@@ -7,9 +7,6 @@ import gpsIcon from '../../assets/images/gps.png'; // Replace with actual icon p
 import fuelIcon from '../../assets/images/petrol-pump.png'; 
 import deliveryIcon from '../../assets/images/shipped.png'; // Replace with actual icon path
 import luxuryIcon from '../../assets/images/car-service.png'; // Replace with actual icon path
-import ecoIcon from '../../assets/images/car image.webp'; // Replace with actual icon path
-import airportIcon from '../../assets/images/airplane.png'; // Replace with actual icon path
-
 
 
 const OurServices = () => {
@@ -57,16 +54,7 @@ const OurServices = () => {
           <h3>Luxury Cars</h3>
           <p>Experience the comfort and style of our luxury car rentals for special occasions.</p>
         </div>
-        <div className="service">
-          <img src={ecoIcon} alt="Eco-Friendly Options" />
-          <h3>Eco-Friendly Options</h3>
-          <p>Choose from our range of eco-friendly cars to reduce your carbon footprint.</p>
-        </div>
-        <div className="service">
-          <img src={airportIcon} alt="Airport Pickup" />
-          <h3>Airport Pickup</h3>
-          <p>Enjoy the convenience of our airport pickup service, available at major airports.</p>
-        </div>
+     
  
       </div>
     </section>

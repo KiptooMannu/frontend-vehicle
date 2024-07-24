@@ -6,7 +6,7 @@ const HeroSection = () => {
       <div className="words">
         <h1>Welcome to Our Vehicle Rental Service</h1>
         <p className="flashing-text">Explore our wide range of vehicles and book your ride today!</p>
-        <button>Explore Now</button>
+        <button>Enjoy With US</button>
       </div>
     </section>
   );
