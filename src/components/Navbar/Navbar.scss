@@ -5,10 +5,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-   background-color:seagreen;
+   background-color:rgb(43, 51, 75);
    padding-top: 25PX;
    padding-bottom: 25PX;
-   height: 2rem;
+   height: 3rem;
 
     margin: 0 auto;
     padding: 0 2rem;
@@ -17,7 +17,7 @@
     .logo {
       font-size: 2.5rem;
       font-weight: bold;
-      color: rgb(14, 12, 12); 
+      color: rgb(73, 231, 0); 
     }
 
     .nav-links {
@@ -30,7 +30,7 @@
         margin-left: 2rem;
 
         a {
-          color:black;
+          color:white;
           text-decoration: none;
           font-weight: bold;
           font-size: 2REM;
@@ -56,7 +56,7 @@
       display: flex;
       align-items: center;
       cursor: pointer;
-      color: rgb(0, 0, 0);
+      color:whitesmoke;
       font-size: 4rem;
 
       svg {
@@ -92,7 +92,7 @@
         a {
           display: block;
           padding: 1rem;
-          color: black;
+          color:White;
           font-size: 1rem;
           text-decoration: none;
           transition: background-color 0.3s, color 0.3s;
