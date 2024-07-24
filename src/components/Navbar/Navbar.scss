@@ -92,14 +92,14 @@
         a {
           display: block;
           padding: 1rem;
-          color:White;
+          color:Black;
           font-size: 1rem;
           text-decoration: none;
           transition: background-color 0.3s, color 0.3s;
 
           &:hover {
             background-color: #ff6200;
-            color:Grey;
+            color:white;
           }
         }
       }

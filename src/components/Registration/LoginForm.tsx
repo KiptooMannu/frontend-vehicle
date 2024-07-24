@@ -1,20 +1,17 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { Avatar, Button, CssBaseline, TextField, FormControlLabel, Checkbox, Link, Grid, Box, Typography, Container, CircularProgress, Snackbar } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useLoginMutation } from '../../AuthApi'; 
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { green } from '@mui/material/colors';
-import { setUser } from '../../features/slices/authSlice';
 
 const theme = createTheme();
 
 function SignIn() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
   const [login, { isLoading }] = useLoginMutation();
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
@@ -49,9 +46,6 @@ function SignIn() {
       localStorage.setItem('token', token);
       localStorage.setItem('user', JSON.stringify(user));
 
-      // Dispatch the setUser action to update the Redux store
-      dispatch(setUser({ isAuthenticated: true, user, token }));
-
       // Log the new localStorage state for verification
       console.log('Updated localStorage state:', {
         token: localStorage.getItem('token'),
@@ -83,7 +77,7 @@ function SignIn() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs" sx={{ marginBottom: 10 }}>
+      <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box sx={{ marginTop: 8, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
           <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
