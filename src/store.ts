@@ -11,9 +11,14 @@ import { vehiclesApii } from './components/DashBoards/AdminDashBoard/Slices/mana
 import { locationApi } from './components/DashBoards/UserDashBoard/LOCATION';
 import { paymentApi } from './components/DashBoards/UserDashBoard/Slices/paymentsApi';
 import { dashboardApi } from './components/DashBoards/AdminDashBoard/Slices/DashBoardapi'; // Import your new API slice
+import authReducer from './features/slices/authSlice';
+
+
 
 export const store = configureStore({
   reducer: {
+
+    auth: authReducer,
     [authApi.reducerPath]: authApi.reducer,
     [bookingsApi.reducerPath]: bookingsApi.reducer,
     [vehiclesApi.reducerPath]: vehiclesApi.reducer,

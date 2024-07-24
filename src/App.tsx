@@ -4,7 +4,7 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
-import Cars from './components/Cars/cars'
+
 // Components
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer';
@@ -30,8 +30,11 @@ import CustomerSupportTickets from './components/DashBoards/AdminDashBoard/custo
 import FleetManagement from './components/DashBoards/AdminDashBoard/FleetManagement';
 import SuccessPage from './components/DashBoards/UserDashBoard/Success';
 import Cancel from './components/DashBoards/UserDashBoard/Cancel';
+import Cars from './components/Cars/cars'
 
-// Load Stripe with your public key
+// import ProtectedRoute from './components/Registration/protectedroute';
+
+
 const stripePromise = loadStripe('your-public-key-here');
 
 const App = () => {
@@ -44,7 +47,7 @@ const App = () => {
             <>
               <HeroSection />
               <About />
-              <Cars/>
+              <Cars />
               <WhyChoose />
               <ServicesSection />
               <ContactSection />
@@ -55,31 +58,38 @@ const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+
           <Route path="/user/dashboard/*" element={
-            <DashboardLayout>
-              <Routes>
-                <Route index element={<Dashboard />} />
-                <Route path="dashboard" element={<Dashboard />} />
-                <Route path="booked-vehicles" element={<BookTheVehicles />} />
-                <Route path="BookingHistory" element={<BookingHistory />} />
-                <Route path="my-tickets" element={<MyTickets />} />
-                <Route path="new-ticket" element={<NewTicket />} />
-              </Routes>
-            </DashboardLayout>
+       
+              <DashboardLayout>
+                <Routes>
+                  <Route index element={<Dashboard />} />
+                  <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="booked-vehicles" element={<BookTheVehicles />} />
+                  <Route path="BookingHistory" element={<BookingHistory />} />
+                  <Route path="my-tickets" element={<MyTickets />} />
+                  <Route path="new-ticket" element={<NewTicket />} />
+                </Routes>
+              </DashboardLayout>
+          
           } />
+
           <Route path="/admin/dashboard/*" element={
-            <AdminDashboardLayout>
-              <Routes>
-                <Route index element={<ManageVehicles />} />
-                <Route path="manage-vehicles" element={<ManageVehicles />} />
-                <Route path="manage-users" element={<ManageUsers />} />
-                <Route path="reports" element={<Reports />} />
-                <Route path="locations" element={<Locations />} />
-                <Route path="support-tickets" element={<CustomerSupportTickets />} />
-                <Route path="fleet-management" element={<FleetManagement />} />
-              </Routes>
-            </AdminDashboardLayout>
+            // <ProtectedRoute requiredRole="admin">
+              <AdminDashboardLayout>
+                <Routes>
+                  <Route index element={<ManageVehicles />} />
+                  <Route path="manage-vehicles" element={<ManageVehicles />} />
+                  <Route path="manage-users" element={<ManageUsers />} />
+                  <Route path="reports" element={<Reports />} />
+                  <Route path="locations" element={<Locations />} />
+                  <Route path="support-tickets" element={<CustomerSupportTickets />} />
+                  <Route path="fleet-management" element={<FleetManagement />} />
+                </Routes>
+              </AdminDashboardLayout>
+            // </ProtectedRoute>
           } />
+
           <Route path="/payment-success" element={<SuccessPage />} />
           <Route path="/payment-canceled" element={<Cancel />} />
         </Routes>

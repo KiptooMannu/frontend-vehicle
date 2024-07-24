@@ -78,3 +78,12 @@ export interface Users {
   profile_image: string;
   password?: string;
 }
+
+
+export interface PartialUser {
+  user_id: number;
+  username: string;
+  email: string;
+  role: string;
+  // This should match the actual properties returned by the API
+}

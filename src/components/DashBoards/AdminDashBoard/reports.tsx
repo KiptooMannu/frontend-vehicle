@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography, Grid, Card, CardContent, Button, Divider, Avatar, Modal, Backdrop, Fade } from '@mui/material';
-import { SaveAlt as SaveAltIcon, AttachMoney, Book, Person, LocationOn, SupportAgent } from '@mui/icons-material';
+import { SaveAlt as SaveAltIcon, Money as MoneyIcon, CalendarToday as CalendarTodayIcon, People as PeopleIcon, Place as PlaceIcon, Support as SupportIcon } from '@mui/icons-material';
 import axios from 'axios';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -49,14 +49,17 @@ const Reports: React.FC = () => {
     const input = document.getElementById('report-content');
 
     if (input) {
-      const canvas = await html2canvas(input);
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF();
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.save(`${reportTitle}.pdf`);
+      try {
+        const canvas = await html2canvas(input);
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF('p', 'mm', 'a4');
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+        pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save(`${reportTitle}.pdf`);
+      } catch (error) {
+        console.error('Error generating PDF:', error);
+      }
     }
   };
 
@@ -65,7 +68,6 @@ const Reports: React.FC = () => {
     setTimeout(handleDownloadPDF, 500); // Ensure the modal is closed before starting the download
   };
 
-  // Calculate total counts for each category
   const totalPayments = payments.length;
   const totalBookings = bookings.length;
   const totalUsers = users.length;
@@ -73,11 +75,11 @@ const Reports: React.FC = () => {
   const totalTickets = tickets.length;
 
   const statCards = [
-    { title: 'Payments Report', count: totalPayments, icon: <AttachMoney fontSize="large" />, color: '#4caf50', data: payments },
-    { title: 'Bookings Report', count: totalBookings, icon: <Book fontSize="large" />, color: '#2196f3', data: bookings },
-    { title: 'Users Report', count: totalUsers, icon: <Person fontSize="large" />, color: '#9c27b0', data: users },
-    { title: 'Locations Report', count: totalLocations, icon: <LocationOn fontSize="large" />, color: '#ff9800', data: locations },
-    { title: 'Customer Support Tickets Report', count: totalTickets, icon: <SupportAgent fontSize="large" />, color: '#f44336', data: tickets },
+    { title: 'Payments Report', count: totalPayments, icon: <MoneyIcon fontSize="large" />, color: '#4caf50', data: payments },
+    { title: 'Bookings Report', count: totalBookings, icon: <CalendarTodayIcon fontSize="large" />, color: '#2196f3', data: bookings },
+    { title: 'Users Report', count: totalUsers, icon: <PeopleIcon fontSize="large" />, color: '#9c27b0', data: users },
+    { title: 'Locations Report', count: totalLocations, icon: <PlaceIcon fontSize="large" />, color: '#ff9800', data: locations },
+    { title: 'Customer Support Tickets Report', count: totalTickets, icon: <SupportIcon fontSize="large" />, color: '#f44336', data: tickets },
   ];
 
   return (

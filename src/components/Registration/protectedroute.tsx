@@ -1,11 +1,25 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
+import { useSelector } from 'react-redux';
 import { Navigate, Outlet } from 'react-router-dom';
-import { useAuth } from './Authcontext'; // Adjust the import path as needed
+import { RootState } from '../../store';
 
-const ProtectedRoute: React.FC = () => {
-  const { isAuthenticated } = useAuth();
+interface ProtectedRouteProps {
+  requiredRole?: string;
+  children?: ReactNode;
+}
 
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ requiredRole, children }) => {
+  const { isAuthenticated, user } = useSelector((state: RootState) => state.auth);
+
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
+  }
+
+  if (requiredRole && user?.role !== requiredRole) {
+    return <Navigate to="/" />;
+  }
+
+  return children ? <>{children}</> : <Outlet />;
 };
 
 export default ProtectedRoute;
