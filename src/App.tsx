@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css'; // Import Toastify CSS
 
 // Components
 import Navbar from './components/Navbar/Navbar';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import HeroSection from './components/HeroSection/Herosection';
 import ServicesSection from './components/ServiceSection/Service';
 import ContactSection from './components/Contact/Contact';
