@@ -1,11 +1,10 @@
 .about {
-  background-color:whitesmoke;
+  background-color: whitesmoke;
   margin-top: 10px;
   padding: 2rem 1rem;
   box-sizing: border-box;
   height: 70vh;
   margin-bottom: 130px;
-  
 
   .about-content {
     display: flex;
@@ -13,26 +12,24 @@
     justify-content: space-between;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
     padding: 2rem;
-    background-color: #fff; /* Added background color for better visibility */
+    background-color: #fff;
     border-radius: 8px;
 
     .about-image {
-      flex: 2; /* Adjust flex value as needed */
-      max-width: 30%;
-      height: auto; /* Maintain aspect ratio */
-      object-fit: cover; /* Ensure the image covers its container */
+      flex: 3; /* Increase flex value */
+      width: 40%; /* Increase width for larger screens */
+      height: auto;
+      object-fit: cover;
       margin-left: 5rem;
       border-radius: 8px;
-      /* Set a custom height if you know the text height, or adjust as needed */
-      min-height: calc(100% - 2rem); /* Adjust this calculation based on the surrounding layout */
-      /* Ensure image is slightly larger than text */
+      min-height: calc(100% - 2rem);
     }
 
     .about-text {
       flex: 2; /* Adjust flex value as needed */
       text-align: left;
       margin: 0 1rem;
-      max-width: 50%; /* Adjust max-width if needed */
+      max-width: 50%;
 
       h2 {
         font-size: 2rem;
@@ -85,18 +82,49 @@
     }
   }
 
+  /* For large desktops (1200px and above) */
+  @media (max-width: 1200px) {
+    .about-content {
+      .about-image {
+        margin-left: 3rem;
+        width: 45%; /* Adjust width for large desktops */
+      }
+      .about-text {
+        max-width: 45%;
+      }
+    }
+  }
+
+  /* For tablets (up to 992px) */
+  @media (max-width: 992px) {
+    .about-content {
+      .about-image {
+        margin-left: 2rem;
+        width: 50%; /* Adjust width for tablets */
+      }
+      .about-text {
+        max-width: 40%;
+      }
+    }
+  }
+
+  /* For smaller tablets and large phones (up to 768px) */
   @media (max-width: 768px) {
     .about-content {
       flex-direction: column;
       text-align: center;
 
       .about-image {
+        margin-top: 3rem;
         margin-bottom: 1rem;
         width: 100%; /* Ensure image takes full width on smaller screens */
+        height: auto; /* Ensure image adjusts height accordingly */
+        margin-left: 0;
       }
 
       .about-text {
         margin: 0;
+        max-width: 100%;
       }
     }
 
@@ -106,6 +134,86 @@
       .stat-item {
         margin-bottom: 1rem;
         flex: 1 1 auto;
+      }
+    }
+  }
+
+  /* For small phones (up to 576px) */
+  @media (max-width: 576px) {
+    padding: 1rem 0.5rem;
+    height: auto;
+
+    .about-content {
+      padding: 1rem;
+      box-shadow: none;
+
+      .about-image {
+        margin-top: 4rem;
+        margin-bottom: 1rem;
+        width: 100%;
+        height: auto;
+      }
+
+      .about-text {
+        margin: 0;
+        max-width: 100%;
+        h2 {
+          font-size: 1.5rem;
+        }
+        h3 {
+          font-size: 1.25rem;
+        }
+        p {
+          font-size: 0.875rem;
+        }
+      }
+    }
+
+    .about-stats {
+      margin-top: 1rem;
+      .stat-item {
+        margin: 0.5rem 0;
+        padding: 0.5rem;
+        h4 {
+          font-size: 1.25rem;
+        }
+        p {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  /* For extra small phones (up to 375px) */
+  @media (max-width: 375px) {
+    padding: 0.5rem;
+    height: auto;
+
+    .about-content {
+      padding: 0.5rem;
+
+      .about-text {
+        h2 {
+          font-size: 1.25rem;
+        }
+        h3 {
+          font-size: 1rem;
+        }
+        p {
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    .about-stats {
+      .stat-item {
+        padding: 0.5rem;
+        h4 {
+          font-size: 1rem;
+        }
+        p {
+          font-size: 0.75rem;
+        }
       }
     }
   }

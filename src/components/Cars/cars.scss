@@ -1,66 +1,92 @@
 .car {
-    padding: 2rem 1rem;
-    background-color: #f9f9f9;
+  padding: 2rem 1rem;
+  background-color: #f9f9f9;
+  text-align: center;
+  margin-top: 10px;
+  box-sizing: border-box;
+
+  .car-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+  }
+
+  .car-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .car-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     text-align: center;
-    margin-top: 10px;
-    box-sizing: border-box;
-  
-    .car-title {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 2rem;
-      margin-top: 4rem;
+    flex: 1 1 22%; /* Adjust to fit 4 items per row */
+    max-width: 22%; /* Ensures 4 items per row with gap */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .car-image {
+      width: 100%;
+      height: 250px; /* Uniform height */
+      object-fit: cover; /* Maintain aspect ratio */
+      border-bottom: 1px solid #ddd;
     }
-  
-    .car-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      justify-content: center;
-    }
-  
-    .car-card {
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      text-align: center;
-      flex: 1 1 30%; // Adjust to fit 4 items per row
-      max-width: 30%; // Ensures 4 items per row with gap
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 1rem;
-  
-      .car-image {
-        width: 100%;
-        height: 200px; // Uniform height
-        object-fit: cover; // Maintain aspect ratio
-        border-bottom: 1px solid #ddd;
+
+    .car-details {
+      padding: 1rem;
+      height: auto;
+
+      .car-name {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: #333;
       }
-  
-      .car-details {
-        padding: 1rem;
-        height: 6rem;
-        
-        .car-name {
-          font-size: 1.5rem;
-          margin-bottom: 0.5rem;
-          color: #333;
-        }
-  
-        .car-specs {
-          font-size: 1.1rem;
-          color: #666;
-        }
-      }
-    }
-  
-    @media (max-width: 768px) {
-      .car-card {
-        flex: 1 1 45%; // Adjust to fit 2 items per row
-        max-width: 45%;
+
+      .car-specs {
+        font-size: 1.1rem;
+        color: #666;
       }
     }
   }
-  
+
+  @media (max-width: 1024px) {
+    .car-title {
+      font-size: 2rem;
+    }
+
+    .car-card {
+      flex: 1 1 45%; /* Adjust to fit 2 items per row */
+      max-width: 45%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .car-title {
+      font-size: 1.75rem;
+    }
+
+    .car-card {
+      flex: 1 1 60%; /* Adjust to fit 1 item per row */
+      max-width: 60%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .car-title {
+      font-size: 2rem;
+      margin-top: -70px;
+    }
+
+    .car-card {
+      flex: 1 1 90%; /* Adjust to fit 1 item per row */
+      max-width: 90%;
+    }
+  }
+}
