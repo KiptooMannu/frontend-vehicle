@@ -5,7 +5,7 @@ import { LoginRequest, LoginResponse, RegisterRequest, RegisterResponse } from '
 
 export const authApi = createApi({
   reducerPath: 'api',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://vehicle-management-backend.onrender.com/' }),
   endpoints: (builder) => ({
     login: builder.mutation<LoginResponse, LoginRequest>({
       query: (credentials) => ({
