@@ -1,6 +1,5 @@
 .contact-form {
-  padding: 4rem 0rem;
-  padding-top: 7px;
+  padding: 4rem 0;
   background-color: #f9f9f9;
   text-align: center;
   margin-top: -70px;
@@ -64,11 +63,70 @@
     }
   }
 
+  @media (max-width: 1440px) {
+    h2 {
+      font-size: 1.75rem;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 3rem 1rem;
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    form {
+      padding: 1.5rem;
+    }
+  }
+
   @media (max-width: 768px) {
     padding: 2rem 1rem;
 
+    h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
     form {
       padding: 1rem;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 1rem 0.5rem;
+    margin-top: 2rem;
+    overflow: hidden;
+
+    h2 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      padding: 0.75rem;
+      width: 100%; /* Ensure the form takes full width */
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 1rem 0.5rem;
+    margin-top: 1rem;
+
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    form {
+      padding: 0.5rem;
     }
   }
 }

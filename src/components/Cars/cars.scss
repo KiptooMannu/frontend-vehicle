@@ -8,7 +8,7 @@
   .car-title {
     font-size: 2.5rem;
     color: #333;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     margin-top: 4rem;
   }
 
@@ -56,9 +56,42 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1440px) {
+    .car-title {
+      font-size: 2.25rem;
+    }
+
+    .car-card {
+      flex: 1 1 20%; /* Adjust to fit 5 items per row */
+      max-width: 20%;
+    }
+  }
+
+  @media (max-width: 1200px) {
     .car-title {
       font-size: 2rem;
+    }
+
+    .car-card {
+      flex: 1 1 25%; /* Adjust to fit 4 items per row */
+      max-width: 25%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .car-title {
+      font-size: 1.75rem;
+    }
+
+    .car-card {
+      flex: 1 1 33.333%; /* Adjust to fit 3 items per row */
+      max-width: 33.333%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .car-title {
+      font-size: 1.5rem;
     }
 
     .car-card {
@@ -67,26 +100,27 @@
     }
   }
 
-  @media (max-width: 768px) {
-    .car-title {
-      font-size: 1.75rem;
-    }
-
-    .car-card {
-      flex: 1 1 60%; /* Adjust to fit 1 item per row */
-      max-width: 60%;
-    }
-  }
-
   @media (max-width: 576px) {
+    margin-top: -60px;
     .car-title {
       font-size: 2rem;
-      margin-top: -70px;
+      margin-top: 0;
     }
 
     .car-card {
       flex: 1 1 90%; /* Adjust to fit 1 item per row */
       max-width: 90%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .car-title {
+      font-size: 1.5rem;
+    }
+
+    .car-card {
+      flex: 1 1 100%; /* Adjust to fit 1 item per row */
+      max-width: 100%;
     }
   }
 }

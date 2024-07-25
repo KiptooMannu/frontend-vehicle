@@ -4,8 +4,8 @@
   text-align: center;
   margin-top: 10px;
   box-sizing: border-box;
-  max-width: 100%; // Constrain width for better appearance on larger screens
-  margin: 0 auto; // Center the container
+  max-width: 100%; /* Constrain width for better appearance on larger screens */
+  margin: 0 auto; /* Center the container */
 
   h2 {
     font-size: 2.5rem;
@@ -16,12 +16,12 @@
 
   .features {
     display: flex;
-    flex-wrap: wrap; // Allow items to wrap to the next line
-    gap: 1rem; // Space between items
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    gap: 1rem; /* Space between items */
 
     .feature {
-      flex: 1 1 calc(25% - 1rem); // Four items per row, with gap adjustment
-      box-sizing: border-box; // Ensure padding and border are included in width calculations
+      flex: 1 1 calc(25% - 1rem); /* Four items per row, with gap adjustment */
+      box-sizing: border-box; /* Ensure padding and border are included in width calculations */
       text-align: center;
       padding: 1rem;
       border-radius: 8px;
@@ -51,26 +51,76 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1440px) {
+    h2 {
+      font-size: 2.25rem;
+    }
+
     .features {
       .feature {
-        flex: 1 1 calc(33.333% - 1rem); // Three items per row for tablets
+        flex: 1 1 calc(20% - 1rem); /* Five items per row for large screens */
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    .features {
+      .feature {
+        flex: 1 1 calc(25% - 1rem); /* Four items per row */
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    h2 {
+      font-size: 1.75rem;
+    }
+
+    .features {
+      .feature {
+        flex: 1 1 calc(33.333% - 1rem); /* Three items per row for tablets */
       }
     }
   }
 
   @media (max-width: 768px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+
     .features {
       .feature {
-        flex: 1 1 calc(50% - 1rem); // Two items per row for mobile devices
+        flex: 1 1 calc(50% - 1rem); /* Two items per row for mobile devices */
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    margin-top: -20px;
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .features {
+      .feature {
+        flex: 1 1 calc(100% - 1rem); /* One item per row for small mobile devices */
       }
     }
   }
 
   @media (max-width: 480px) {
+    h2 {
+      font-size: 2rem;
+    
+    }
+
     .features {
       .feature {
-        flex: 1 1 calc(100% - 1rem); // One item per row for very small screens
+        flex: 1 1 calc(100% - 1rem); /* One item per row for very small screens */
       }
     }
   }

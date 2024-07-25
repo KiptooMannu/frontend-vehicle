@@ -18,7 +18,7 @@ const cars = [
   { imageSrc: car6, name: 'Tesla Model S', specs: 'Electric Sedan' },
   { imageSrc: car4, name: 'Porsche 911', specs: 'Sports Car' },
   { imageSrc: car8, name: 'Mercedes-Benz S-Class', specs: 'Luxury Sedan' },
-  { imageSrc: car2, name: 'Audi Q7', specs: 'SUV' },
+  
 
 
 ];

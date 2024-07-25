@@ -1,5 +1,5 @@
 .our-services {
-  padding: 4rem 0rem;
+  padding: 4rem 0;
   background-color: #f9f9f9;
   text-align: center;
   margin-bottom: 15px;
@@ -16,7 +16,6 @@
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 10px;
-
 
     .service {
       max-width: 20%;
@@ -50,13 +49,70 @@
     }
   }
 
+  @media (max-width: 1440px) {
+    h2 {
+      font-size: 2.25rem;
+    }
+
+    .services .service {
+      max-width: 22%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    .services .service {
+      max-width: 25%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    h2 {
+      font-size: 2.25rem;
+    }
+
+    .services .service {
+      max-width: 33.333%;
+    }
+  }
+
   @media (max-width: 768px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    .services .service {
+      max-width: 45%;
+    }
+  }
+
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 1.75rem;
+      margin-bottom: -5px;
+      margin-top: 10px;
+    }
+
     .services {
       flex-direction: column;
+      align-items: center;
 
       .service {
-        max-width: 100%;
+        max-width: 90%;
       }
+    }
+  }
+
+  @media (max-width: 480px) {
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    .services .service {
+      max-width: 100%;
     }
   }
 }

@@ -1,5 +1,3 @@
-
-
 @keyframes changeBackground {
   0% {
     background-image: url('../../assets/images/couple-near-new-white-car-man-driving-work-his-wife-will-waiting-him.jpg');
@@ -35,7 +33,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); // Adjust the overlay color and opacity as needed
+    background: rgba(0, 0, 0, 0.5); /* Overlay color and opacity */
     z-index: 1;
   }
 
@@ -53,7 +51,7 @@
       font-size: 1.9rem;
       font-weight: bold;
       margin-bottom: 2rem;
-      animation: flashRed 1s infinite;
+      animation: flashRed 1s infinite; /* Add this if you have a flashRed keyframes animation */
     }
 
     button {
@@ -110,6 +108,26 @@
 
       button {
         font-size: 1rem;
+      }
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 0.5rem;
+   height: 40vh;
+    .words {
+      margin-top: 50px;
+
+      h1 {
+        font-size: 1.75rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      button {
+        font-size: 0.9rem;
       }
     }
   }
