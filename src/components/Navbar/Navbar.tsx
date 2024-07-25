@@ -7,11 +7,21 @@ const Navbar: React.FC = () => {
   const [showNavLinks, setShowNavLinks] = useState<boolean>(false); // State to toggle showing navigation links
 
   const toggleAuthLinks = () => {
-    setShowAuthLinks(!showAuthLinks);
+    setShowAuthLinks(prevState => !prevState);
+    if (showNavLinks) {
+      setShowNavLinks(false); // Close nav links if open
+    }
   };
 
   const toggleNavLinks = () => {
-    setShowNavLinks(!showNavLinks);
+    setShowNavLinks(prevState => !prevState);
+    if (showAuthLinks) {
+      setShowAuthLinks(false); // Close auth links if open
+    }
+  };
+
+  const handleNavLinkClick = () => {
+    setShowNavLinks(false); // Hide navigation links when any link is clicked
   };
 
   return (
@@ -28,10 +38,10 @@ const Navbar: React.FC = () => {
 
         {/* Navigation Links */}
         <ul className={`nav-links ${showNavLinks ? 'show' : 'hide'}`}>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/services">Services</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/" onClick={handleNavLinkClick}>Home</Link></li>
+          <li><Link to="/about" onClick={handleNavLinkClick}>About</Link></li>
+          <li><Link to="/services" onClick={handleNavLinkClick}>Services</Link></li>
+          <li><Link to="/contact" onClick={handleNavLinkClick}>Contact</Link></li>
         </ul>
 
         {/* Auth Links */}
