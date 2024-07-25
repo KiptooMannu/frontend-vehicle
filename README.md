@@ -1,31 +1,43 @@
-# React + TypeScript + Vite
+CarHub Booking Website - Client Side
+Overview
+CarHub is a vehicle booking platform that allows users to browse, book, and manage vehicle rentals. This README provides an overview of the client-side architecture and features of the CarHub booking website, including details about the technologies used, key components, and how to get started.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Technologies Used
+React: A JavaScript library for building user interfaces.
+Redux: State management library for managing application state.
+RTK Query: Data fetching and caching tool for Redux.
+Tailwind CSS: Utility-first CSS framework for styling.
+Material-UI: React components library for a modern UI.
+Stripe: Payment processing platform.
+Day.js: Lightweight date library for handling date and time.
+React-Toastify: Library for displaying toast notifications.
+Vite: Fast build tool for modern web projects.
+Project Structure
+Key Components
+UserDashboard: The main dashboard for authenticated users. Includes:
 
-Currently, two official plugins are available:
+Sidenav: Navigation component for accessing different parts of the dashboard.
+Navbar: Header component for user interactions and site navigation.
+BookingForm: Component for creating vehicle bookings. Allows users to select start and end dates, choose a pickup location, and initiate payment through Stripe.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+ManageUsers: Component for managing users. Displays user profiles and allows administrators to disable users.
 
-## Expanding the ESLint configuration
+APIs
+Bookings API: Handles booking creation and management.
+Locations API: Provides location data for vehicle pickups.
+Payments API: Manages payment transactions via Stripe.
+Users API: Manages user data and operations.
+Components Breakdown
+BookingForm
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+State Management: Manages booking details (start date, end date, location) and handles payment initiation.
+Date Handling: Uses Day.js for date calculations.
+Stripe Integration: Facilitates payment processing and redirects users to the Stripe checkout page.
+ManageUsers
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-"# frontend-vehicle" 
+User Management: Displays user profiles in a card layout, showing details like name, email, contact, and address.
+Delete User: Provides functionality for administrators to disable users.
+Getting Started
+Prerequisites
+Node.js and pnpm (or Yarn) installed on your machine.
+Access to environment variables for API keys and endpoints.
